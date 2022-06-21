@@ -1,4 +1,5 @@
 import "./App.scss";
+import EmployeeList from "./components/EmployeeList/EmployeeList";
 
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
@@ -7,6 +8,7 @@ const App = () => {
     <div>
       <Header />
       <Search />
+      <EmployeeList />
     </div>
   );
 };
