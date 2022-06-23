@@ -6,18 +6,15 @@ const AddEmployee = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [emailId, setEmailId] = useState("");
-  // const history = useHistory();
   const { id } = useParams();
 
   const saveOrUpdateEmployee = (e) => {
     e.preventDefault();
     const employee = { firstName, lastName, emailId };
-    // console.log(employee);
     if (id) {
       EmployeeServices.updateEmployee(id, employee)
         .then((response) => {
           console.log(response.data);
-          // history.push("/employees");
         })
         .catch((error) => {
           console.log(error);
@@ -26,7 +23,6 @@ const AddEmployee = () => {
       EmployeeServices.createEmployee(employee)
         .then((response) => {
           console.log(response.data);
-          // history.push("/employees");
         })
         .catch((error) => {
           console.log(error);
@@ -44,7 +40,7 @@ const AddEmployee = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   const title = () => {
     if (id) {
