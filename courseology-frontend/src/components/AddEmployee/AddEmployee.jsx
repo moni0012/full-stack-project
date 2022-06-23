@@ -82,7 +82,9 @@ const AddEmployee = () => {
                 </div>
 
                 <div className="employee__information--emailId">
-                  <label>Email Id</label>
+                  <label className="employee__information--label">
+                    Email Id
+                  </label>
                   <input
                     type="text"
                     placeholder="Enter Email Id"
