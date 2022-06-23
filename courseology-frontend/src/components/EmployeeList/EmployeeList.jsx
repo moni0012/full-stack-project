@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./EmployeeList.scss";
 import EmployeeServices from "../EmployeeServices/EmployeeServices";
 
 const EmployeeList = () => {
@@ -32,27 +33,32 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="container">
-      <Link to="/add-employee">Add Employee</Link>
-      <table className="table table-bordered table-striped">
+    <div className="employees">
+      <Link to="/add-employee" className="employees__table--add">
+        Add Employee
+      </Link>
+      <table className="employees__table">
         <thead>
-          <th>Employee Id</th>
-          <th>Employee First Name</th>
-          <th>Employee Last Name</th>
-          <th>Employee Email Id</th>
-          <th>Actions</th>
+          <th className="employees__table--id">Employee Id</th>
+          <th className="employees__table--fName">Employee First Name</th>
+          <th className="employees__table--lName">Employee Last Name</th>
+          <th className="employees__table--emailId">Employee Email Id</th>
+          <th className="employees__table--action">Actions</th>
         </thead>
 
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.id}>
-              <td>{employee.id}</td>
-              <td>{employee.firstName}</td>
-              <td>{employee.lastName}</td>
-              <td>{employee.emailId}</td>
+              <td className="employees__table--eid">{employee.id}</td>
+              <td className="employees__table--fn">{employee.firstName}</td>
+              <td className="employees__table--ln">{employee.lastName}</td>
+              <td className="employees__table--emails">{employee.emailId}</td>
               <td>
                 <Link to={`/edit-employee/${employee.id}`}>Update</Link>
-                <button onClick={() => deleteEmployee(employee.id)}>
+                <button
+                  className="employees__table--delete"
+                  onClick={() => deleteEmployee(employee.id)}
+                >
                   Delete
                 </button>
               </td>

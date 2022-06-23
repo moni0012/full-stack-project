@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import EmployeeServices from "../EmployeeServices/EmployeeServices";
+import "./AddEmployee.scss";
 
 const AddEmployee = () => {
   const [firstName, setFirstName] = useState("");
@@ -52,13 +53,13 @@ const AddEmployee = () => {
 
   return (
     <div>
-      <div className="container">
-        <div className="row">
+      <div className="employee">
+        <div className="employee__information">
           <div>
             {title()}
-            <div className="body">
+            <div className="employee__information--details">
               <form>
-                <div>
+                <div className="employee__information--fName">
                   <label>First Name</label>
                   <input
                     type="text"
@@ -69,7 +70,7 @@ const AddEmployee = () => {
                   ></input>
                 </div>
 
-                <div>
+                <div className="employee__information--lName">
                   <label>Last Name</label>
                   <input
                     type="text"
@@ -80,7 +81,7 @@ const AddEmployee = () => {
                   ></input>
                 </div>
 
-                <div>
+                <div className="employee__information--emailId">
                   <label>Email Id</label>
                   <input
                     type="text"
@@ -92,6 +93,7 @@ const AddEmployee = () => {
                 </div>
 
                 <button
+                  className="employee__information--bSubmit"
                   onClick={(e) => {
                     saveOrUpdateEmployee(e);
                   }}
@@ -99,7 +101,12 @@ const AddEmployee = () => {
                   Submit
                 </button>
 
-                <Link to="/employees">Cancel</Link>
+                <Link
+                  to="/employees"
+                  className="employee__information--bCancel"
+                >
+                  Cancel
+                </Link>
               </form>
             </div>
           </div>

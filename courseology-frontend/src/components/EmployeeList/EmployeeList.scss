@@ -1,15 +1,83 @@
-// @use "../../assets/sass/variables" as *;
-// .searchResult {
-//   padding: 30px 30px 0 30px;
-//   color: $color-violet;
-// }
-// .employeeSelection {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   padding: 0 30px;
-//   gap: 22px;
-// }
-// .employeeCard {
-//   background-color: rgb(206, 198, 198);
-//   padding: 0 10px;
-// }
+@use "../../assets/sass/_variables.scss" as *;
+
+.employees {
+  border: 1px solid $color-dark-grey;
+
+  &__table {
+    border: 1px solid $color-yellow;
+    margin-left: 200px;
+    margin-top: 30px;
+    align-content: center;
+
+    &--id {
+      height: 10px;
+      background-color: $color-violet;
+      text-align: center;
+      font: $font-size-L;
+      padding: 20px 30px;
+      color: $color-white;
+    }
+
+    &--fName {
+      height: 10px;
+      background-color: $color-violet;
+      text-align: center;
+      font: $font-size-L;
+      padding: 20px 30px;
+      color: $color-white;
+    }
+
+    &--lName {
+      height: 10px;
+      background-color: $color-violet;
+      text-align: center;
+      font: $font-size-L;
+      padding: 20px 30px;
+      color: $color-white;
+    }
+
+    &--emailId {
+      height: 10px;
+      background-color: $color-violet;
+      text-align: center;
+      font: $font-size-L;
+      padding: 20px 30px;
+      color: $color-white;
+    }
+
+    &--action {
+      height: 10px;
+      background-color: $color-violet;
+      text-align: center;
+      font: $font-size-L;
+      padding: 20px 30px;
+      color: $color-white;
+      text-align: center;
+      border: 1px solid $color-light-grey;
+    }
+
+    &--eid {
+      text-align: center;
+      border: 1px solid $color-light-grey;
+    }
+
+    &--fn {
+      text-align: center;
+      border: 1px solid $color-light-grey;
+    }
+    &--ln {
+      text-align: center;
+      border: 1px solid $color-light-grey;
+    }
+    &--emails {
+      text-align: center;
+      border: 1px solid $color-light-grey;
+    }
+
+    &--delete {
+      background-color: $color-submit;
+      margin-left: 10px;
+      width: 50px;
+    }
+  }
+}
