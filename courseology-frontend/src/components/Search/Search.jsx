@@ -6,7 +6,7 @@ const Search = ({ handleInput }) => {
   };
   return (
     <div className="searchBox">
-      <h3 className="searchCourse">Find your employees!..</h3>
+      <h3 className="searchBox__employee">Find your employees..</h3>
       <input
         type="text"
         placeholder="Search title"

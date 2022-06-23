@@ -1,1 +1,18 @@
-$color-violet: rgb(45, 13, 80);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+$font-poppins: Poppins;
+
+$color-violet: #331165;
+$color-white: #ffffff;
+$font-color-black: #303030;
+$color-dark-grey: #455163;
+
+$font-size-S: 10px;
+$font-size-M: 20px;
+$font-size-L: 32px;

@@ -1,6 +1,10 @@
+@use "../../assets/sass/_variables.scss" as *;
+
 .logo {
   height: 30px;
-  background-color: rgb(45, 13, 80);
+  background-color: $color-violet;
+  text-align: center;
+  font: $font-size-L;
   padding: 20px 30px;
-  color: white;
+  color: $color-white;
 }
