@@ -1,24 +1,57 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import EmployeeServices from "../EmployeeServices/EmployeeServices";
 
 const AddEmployee = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [emailId, setEmailId] = useState("");
+  // const history = useHistory();
+  const { id } = useParams();
 
-  const saveEmployee = (e) => {
+  const saveOrUpdateEmployee = (e) => {
     e.preventDefault();
     const employee = { firstName, lastName, emailId };
     // console.log(employee);
+    if (id) {
+      EmployeeServices.updateEmployee(id, employee)
+        .then((response) => {
+          console.log(response.data);
+          // history.push("/employees");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      EmployeeServices.createEmployee(employee)
+        .then((response) => {
+          console.log(response.data);
+          // history.push("/employees");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
 
-    EmployeeServices.createEmployee(employee)
+  useEffect(() => {
+    EmployeeServices.getEmployeeById(id)
       .then((response) => {
-        console.log(response.data);
+        setFirstName(response.data.firstName);
+        setLastName(response.data.lastName);
+        setEmailId(response.data.emailId);
       })
       .catch((error) => {
         console.log(error);
       });
+  });
+
+  const title = () => {
+    if (id) {
+      return <h2>Update Employee</h2>;
+    } else {
+      return <h2>Add Employee</h2>;
+    }
   };
 
   return (
@@ -26,7 +59,7 @@ const AddEmployee = () => {
       <div className="container">
         <div className="row">
           <div>
-            <h2>Add Employee</h2>
+            {title()}
             <div className="body">
               <form>
                 <div>
@@ -64,7 +97,7 @@ const AddEmployee = () => {
 
                 <button
                   onClick={(e) => {
-                    saveEmployee(e);
+                    saveOrUpdateEmployee(e);
                   }}
                 >
                   Submit
