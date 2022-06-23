@@ -1,12 +1,12 @@
 @use "../../assets/sass/_variables.scss" as *;
 
 .employees {
-  border: 1px solid $color-dark-grey;
+  // border: 1px solid $color-dark-grey;
 
   &__table {
     border: 1px solid $color-yellow;
     margin-left: 200px;
-    margin-top: 30px;
+    margin-top: 5px;
     align-content: center;
 
     &--id {

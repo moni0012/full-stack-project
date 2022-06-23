@@ -3,8 +3,55 @@ import { Link } from "react-router-dom";
 import "./EmployeeList.scss";
 import EmployeeServices from "../EmployeeServices/EmployeeServices";
 
+
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  // const { id } = useParams();
+
+  // const url = "http://localhost:8080/employee/id";
+  // const [employeeById, setEmployeeById] = useState([]);
+
+  // const getEmployeeId = async () => {
+  //   let urlParam = url;
+  //   const response = await fetch(urlParam);
+  //   const data = await response.json();
+  //   setEmployeeById(data);
+  // };
+  // useEffect(() => {
+  //   getEmployeeId(employeeById);
+  // }, [employeeById]);
+
+  // const employee = employeeById.find((employee) => employee.idEmployee === id);
+
+  // const url = "http://localhost:8080/employees";
+  // const [employee, setEmployee] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+
+  // useEffect(() => {
+  //   getEmployee(employee, searchTerm);
+  // }, [employee, searchTerm]);
+
+  // const getEmployee = async () => {
+  //   let finalUrl = url;
+  //   const response = await fetch(finalUrl);
+  //   const data = await response.json();
+  //   setEmployee(data);
+  // };
+
+  // const handleInput = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+
+  // const filteredEmployee = employee.filter((employee) => {
+  //   const employeeNameLower = employee.employee.toLowerCase();
+  //   const searchTermLower = searchTerm.toLocaleLowerCase();
+
+  //   if (employeeNameLower.includes(searchTermLower)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // });
 
   useEffect(() => {
     getAllEmployees();
