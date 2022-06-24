@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeList.scss";
+import ViewEmployee from "../ViewEmployee/ViewEmployee";
 import EmployeeServices from "../EmployeeServices/EmployeeServices";
-
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -79,6 +79,17 @@ const EmployeeList = () => {
       });
   };
 
+  // const viewEmployee = (employeeId) => {
+  //   //console.log(employeeId);
+  //   EmployeeServices.viewEmployee(employeeId)
+  //     .then((response) => {
+  //       getAllEmployees();
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
   return (
     <div className="employees">
       <Link to="/add-employee" className="employees__table--add">
@@ -108,6 +119,14 @@ const EmployeeList = () => {
                 >
                   Delete
                 </button>
+                {/* 
+                <button
+                  className="employees__table--view"
+                  onClick={() => viewEmployee(employee.id)}
+                >
+                  View
+                </button> */}
+                <Link to={`/view-employee/${employee.id}`}>View</Link>
               </td>
             </tr>
           ))}
